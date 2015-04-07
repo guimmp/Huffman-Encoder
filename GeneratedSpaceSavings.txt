@@ -1,0 +1,7 @@
+Generated Space Savings of Latest Input
+
+
+The original space taken: 339552 bits
+The new space taken: 188623 bits
+Space Savings: 150929 bits
+

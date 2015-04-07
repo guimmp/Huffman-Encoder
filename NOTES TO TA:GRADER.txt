@@ -1,0 +1,39 @@
+Shreyas Tallamraju - EECS 233 - Prof. Rabinovich - CWRU 2015
++———————————————————————————————————————————————————————————+
+Here, I will tell you, the TA/Grader of this assignment, where each part of the rubric can be located in my code, both in the java file and the method.
+
+Grading rubrics:Scanning the input file and generating character frequencies: 20 pts
+-FileReader.java
+	-public char[] readFile() returned a char array of the input file
+
+-HuffmanList.java
+	-public void insert(HuffmanNode in) modified add method of ArrayList to add 1 to frequency for already read characters, so kept track of frequency in HuffmanNode
+
+-HuffmanNode.java
+	-private int frequency - kept track of each character’s frequency
+
+Producing the Huffman tree (including the HuffmanNode class specification): 25 
+-HuffmanNode.java 
+	-public class HuffmanNode implements Comparable<HuffmanNode> - this class specification created a node class to hold characters, their frequencies, and respective children in the HuffmanTree
+
+-HuffmanTree.java
+	-public void initialize() - uses a PriorityQueue & HuffmanList to assemble a tree (by popping out the two smallest from queue to create a section of the tree, building from bottom to top root).
+Using the Huffman tree to produce the encoding table: 25
+-HuffmanTree.java
+	-public void generateCode(HuffmanNode curr, String str) - a recursive method that uses a pre-order traversal to check each node for leaf status, generate code for each leaf node, and input all of the data into 3 corresponding arrays
+
+	-public void encode() - method that begins the above recursive method
+
+	-accessor methods to return arrays to produce encoding table
+Producing the encoded output file, and computing the space savings:  20
+-FileWriter.java
+	-writeHuffmanTable(String[],char[],int[]) - this method writes the huffman table made up of the 3 arrays produced above to an output file.
+
+	-writeFile(String[],char[],char[]) - this method takes each character from the read input file char array and writes the corresponding code generated via HuffmanTree.java to the output file for each read character.
+
+	-writeSpaceSavings(char[],String[],int[]) - calculates and writes the space savings from usage of Huffman encoding in bits to file
+Style and completeness of submission: 10
+-The entire project is adequately commented and explained thoroughly. 
+-The proposed function is fulfilled.
++———————————————————————————————————————————————————————————+
+Made by Shreyas Tallamraju - 3/17/15 thru 3/21/15
